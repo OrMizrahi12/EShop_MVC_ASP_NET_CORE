@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace EShop.Utility;
 
-namespace EShop.Utility {
-	public class StripeSettings {
+public class StripeSettings {
 		public string SecretKey { get; set; }
 		public string PublishableKey { get; set; }
 	}
-}

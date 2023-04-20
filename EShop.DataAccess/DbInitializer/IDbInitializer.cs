@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace EShop.DataAccess.DbInitializer;
 
-namespace EShop.DataAccess.DbInitializer {
-    public interface IDbInitializer {
-        void Initialize();
-    }
+public interface IDbInitializer {
+    void Initialize();
 }

@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace EShop.Utility;
 
-namespace EShop.Utility
+public static class SD
 {
-    public static class SD
-    {
-        public const string Role_Customer = "Customer";
-        public const string Role_Company = "Company";
-        public const string Role_Admin = "Admin";
-        public const string Role_Employee = "Employee";
+    public const string Role_Customer = "Customer";
+    public const string Role_Company = "Company";
+    public const string Role_Admin = "Admin";
+    public const string Role_Employee = "Employee";
 
 		public const string StatusPending = "Pending";
 		public const string StatusApproved = "Approved";
@@ -26,8 +20,7 @@ namespace EShop.Utility
 		public const string PaymentStatusRejected = "Rejected";
 
 
-        public const string SessionCart = "SessionShoppingCart";
+    public const string SessionCart = "SessionShoppingCart";
 
 
-    }
 }

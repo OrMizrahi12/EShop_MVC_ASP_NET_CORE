@@ -2,33 +2,28 @@
 using Microsoft.Extensions.Configuration;
 using SendGrid.Helpers.Mail;
 using SendGrid;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace EShop.Utility {
-    public class EmailSender : IEmailSender {
-        public string SendGridSecret { get; set; }
+namespace EShop.Utility;
 
-        public EmailSender(IConfiguration _config) {
-            SendGridSecret = _config.GetValue<string>("SendGrid:SecretKey");
-        }
+public class EmailSender : IEmailSender {
+    public string SendGridSecret { get; set; }
 
-        public Task SendEmailAsync(string email, string subject, string htmlMessage) {
-            //logic to send email
+    public EmailSender(IConfiguration _config) {
+        SendGridSecret = _config.GetValue<string>("SendGrid:SecretKey");
+    }
 
-            var client = new SendGridClient(SendGridSecret);
+    public Task SendEmailAsync(string email, string subject, string htmlMessage) {
+        //logic to send email
 
-            var from = new EmailAddress("hello@dotnetmastery.com", "Bulky Book");
-            var to = new EmailAddress(email);
-            var message = MailHelper.CreateSingleEmail(from, to, subject, "", htmlMessage);
+        var client = new SendGridClient(SendGridSecret);
 
-            return client.SendEmailAsync(message);
+        var from = new EmailAddress("hello@dotnetmastery.com", "Bulky Book");
+        var to = new EmailAddress(email);
+        var message = MailHelper.CreateSingleEmail(from, to, subject, "", htmlMessage);
+
+        return client.SendEmailAsync(message);
 
 
-        }
     }
 }
 

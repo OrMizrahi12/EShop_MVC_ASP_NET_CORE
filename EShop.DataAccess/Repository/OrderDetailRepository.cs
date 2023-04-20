@@ -1,28 +1,21 @@
 ﻿using EShop.DataAccess.Repository.IRepository;
 using EShop.DataAcess.Data;
 using EShop.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace EShop.DataAccess.Repository
+namespace EShop.DataAccess.Repository;
+
+public class OrderDetailRepository : Repository<OrderDetail>, IOrderDetailRepository
 {
-    public class OrderDetailRepository : Repository<OrderDetail>, IOrderDetailRepository
+    private ApplicationDbContext _db;
+    public OrderDetailRepository(ApplicationDbContext db) : base(db)
     {
-        private ApplicationDbContext _db;
-        public OrderDetailRepository(ApplicationDbContext db) : base(db)
-        {
-            _db = db;
-        }
+        _db = db;
+    }
 
-        
+    
 
-        public void Update(OrderDetail obj)
-        {
-            _db.OrderDetails.Update(obj);
-        }
+    public void Update(OrderDetail obj)
+    {
+        _db.OrderDetails.Update(obj);
     }
 }
