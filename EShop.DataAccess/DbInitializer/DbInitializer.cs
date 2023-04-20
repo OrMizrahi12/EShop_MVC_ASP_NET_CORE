@@ -46,9 +46,6 @@ namespace EShop.DataAccess.DbInitializer {
 
                 _roleManager.CreateAsync(new IdentityRole(SD.Role_Admin)).GetAwaiter().GetResult();
                 _roleManager.CreateAsync(new IdentityRole(SD.Role_Company)).GetAwaiter().GetResult();
-
-
-                //if roles are not created, then we will create admin user as well
                 _userManager.CreateAsync(new ApplicationUser {
                     UserName = "admin@dotnetmastery.com",
                     Email = "admin@dotnetmastery.com",
